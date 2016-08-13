@@ -11,12 +11,12 @@ Tested on Windows-CP1250
 ## news
 ___
 version 1.5 
-. fix bugs
-. added some console messages
-. insert specific path or use local (warning! script works recursively)
-. add some try, catch block, counter for good and bad transfers
-. timer
-. encoding from any type coding to UTF-8
+> fix bugs
+> added some console messages
+> insert specific path or use local (warning! script works recursively)
+> add some try, catch block, counter for good and bad transfers
+> timer
+> encoding from any type coding to UTF-8
 
 
 Use of the Script is at Your own risk ( firstly backup your files).
