@@ -12,10 +12,31 @@ namespace UTF_8Converter
     {
         private static int counter;
         private static int bad;
+        private static String type = "srt";
         private static Stopwatch stopwatch = new Stopwatch();
         static void Main(string[] args)
         {
-            Console.WriteLine("Choose directory (for actual type 'd') :");
+            Console.Write("Choose type subtitles: \n 1. .srt  2. .sub \nDefault is .srt\nYour choose:");
+            try
+            {
+                switch (int.Parse(Console.ReadLine()))
+                {
+                    case 1:
+                        type = "srt";
+                        break;
+                    case 2:
+                        type = "sub";
+                        break;
+                    default:
+                        Console.WriteLine("Bad type.\n");
+                        break;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Type .srt selected.\n");
+            }
+            Console.WriteLine("\nChoose directory (for actual type 'd') :");
             var path = Console.ReadLine();
             if (path == "d")
             {
@@ -31,7 +52,7 @@ namespace UTF_8Converter
             List<String> files = new List<String>();
             try
             {
-                foreach (string f in Directory.GetFiles(sDir, "*.srt"))
+                foreach (string f in Directory.GetFiles(sDir, "*."+type))
                 {
                     files.Add(f);
                 }
